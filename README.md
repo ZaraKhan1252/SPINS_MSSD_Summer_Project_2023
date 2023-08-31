@@ -44,7 +44,7 @@ NOTE: Everytime you see a "In[ ]" within the python file, it is another executab
 
 Don't mind the red lines - they just show here in R, but is fine in Jupyter Notebook - and hopefully will help with understanding what code block I am talking about
 
-# The first cell block is 
+# The first code block is 
 ```{r setup, include=FALSE}
 import glob
 import pandas as pd
@@ -57,7 +57,7 @@ import matplotlib.pyplot as plt
 which include all the libraries used within the code. This should just download the libraries and be ready to use as you go on. You would need to run this cell block everytime you restart the kernel.
 
 
-# The second cell block is 
+# The second code block is 
 ```{r setup, include=FALSE}
 #NOTE: this has the files removed from the inclusion criteria, the ones from the missing scores, and due to NA values
 #NOTE: THIS SETS THE DATA UP FOR FURTHER ANALYSIS 
