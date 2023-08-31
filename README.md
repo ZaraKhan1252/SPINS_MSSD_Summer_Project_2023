@@ -6,7 +6,7 @@ title: "README"
 output: html_document
 
 # DISCLAIMER:
-This will follow the SPINS dataset, but the code and steps are equivalent for the SPASD Dataset. 
+This will follow the SPINS dataset, but the code and steps are equivalent for the SPASD Dataset. To follow along with the data and Jupyter Notebook code follow this path here: /projects/zkhan/proj1/JupyterNotebook_Code/project_1/data_extracted/NEW_DATA_SPINS/Project_1_SPINS.ipynb (or you could also open the python version)
 
 # Who are you?
 Hello future gamers and gamees, my name is Zara Khan and I was a summer student working in the KIMEL Lab under the co-supervision of Teo Secara and Dr.Colin Hawco. I was part of "The Piposaurs" which included Clara Sun and Fariah Sandhu, since we started in May and attened Brainhack School, instead of starting in June like "Group 2". Yes, we called them Group 2. I will be going into my third year of Electrical and Biomedical Engineering at McMaster University coming this fall but idk where I'll be when you are reading this hehe. Hopefully somewhere nice (please) mentally and physically (hopefully not in delulu land). Anyway, over the four months of my summer in 2023, this README shall document the more important things I did - instead of the other things as in exploring CAMH, Toronto, and making some epic summer friends from the other summer students researching at the same time as me hehe. Hoping that this isn't confusing because man, oh man, did I have to yeet around all my files for this (it was so disorganized, idk how I found anything in my files), so I hope, wish and pray that you'll be able to find everything that you're ever looking for within my projects folder - in a reasonable context, that is.
