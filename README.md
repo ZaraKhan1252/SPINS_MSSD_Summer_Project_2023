@@ -572,7 +572,7 @@ The 12th block of code is just to check the motion data with a histogram - yolo.
 
 # OKAY SO - IT'S PLSC TIME
 
-4) So basically my PLSC code is found here: /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/NEW_plsc.Rmd
+4) So basically my PLSC code is found here: /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/Code/NEW_plsc.Rmd
 
 I had coded and used versions: R/4.1.0 and rstudio/1.4.1717
 
@@ -628,7 +628,7 @@ From here, the top 10 region values were taken and manually placed into a previo
 
 # 6) NOW HERE COMES THE BRAIN PLOTS
 so basically I adapted Julia's code for this in R. 
-My code can be found at /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/testing_brain_plots. 
+My code can be found at /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/Code/testing_brain_plots. 
 Minor things to note: you need to install "ggsegGlasser" by enabling the universe instead of the common command of install.packages("ggsegGlasser"), and you have to manually input the loading values into the functions. 
 Another thing is that the region names are the letters/numbers in the middle of a region name
 
