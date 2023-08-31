@@ -634,5 +634,5 @@ Another thing is that the region names are the letters/numbers in the middle of 
 
 # But that's about it! Thanks for reading :p
 
-The Jupyter Notebook code can be found at: /projects/zkhan/proj1/JupyterNotebook_Code/project_1/data_extracted/NEW_DATA_SPINS/Project_1_SPINS.ipynb
+The Jupyter Notebook code as well as csv's and values can be found at: /projects/zkhan/proj1/JupyterNotebook_Code/project_1/data_extracted/NEW_DATA_SPINS/Project_1_SPINS.ipynb
 
