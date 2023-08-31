@@ -5,44 +5,44 @@ Summer Project 2023 within the KIMEL Lab under the co-supervision of Teo Secara 
 title: "README"
 output: html_document
 
-DISCLAIMER:
+# DISCLAIMER:
 This will follow the SPINS dataset, but the code and steps are equivalent for the SPASD Dataset. 
 
-Who are you?
-# Hello future gamers and gamees, my name is Zara Khan and I was a summer student working in the KIMEL Lab under the co-supervision of Teo Secara and Dr.Colin Hawco. I was part of "The Piposaurs" which included Clara Sun and Fariah Sandhu, since we started in May and attened Brainhack School, instead of starting in June like "Group 2". Yes, we called them Group 2. I will be going into my third year of Electrical and Biomedical Engineering at McMaster University coming this fall but idk where I'll be when you are reading this hehe. Hopefully somewhere nice (please) mentally and physically (hopefully not in delulu land). Anyway, over the four months of my summer in 2023, this README shall document the more important things I did - instead of the other things as in exploring CAMH, Toronto, and making some epic summer friends from the other summer students researching at the same time as me hehe. Hoping that this isn't confusing because man, oh man, did I have to yeet around all my files for this (it was so disorganized, idk how I found anything in my files), so I hope, wish and pray that you'll be able to find everything that you're ever looking for within my projects folder - in a reasonable context, that is.
-#
-# Oh! And I also QC'd for the SPINS and SPASD database that was used here, along with Fariah Sandhu - and then also QC'd for OPTIMUM - but like I have no idea what's going on with that dataset, I just QC'd. It was the death of me, until I realized that my code was the death of me when it didn't choose to work - AND OMG CITRIX PLEASE THAT GODFORSAKEN PROGRAM YEETED MY LAPTOP INTO BLUE SCREEN TERRITORRY A HANDFUL OF TIMES- anyway
+# Who are you?
+Hello future gamers and gamees, my name is Zara Khan and I was a summer student working in the KIMEL Lab under the co-supervision of Teo Secara and Dr.Colin Hawco. I was part of "The Piposaurs" which included Clara Sun and Fariah Sandhu, since we started in May and attened Brainhack School, instead of starting in June like "Group 2". Yes, we called them Group 2. I will be going into my third year of Electrical and Biomedical Engineering at McMaster University coming this fall but idk where I'll be when you are reading this hehe. Hopefully somewhere nice (please) mentally and physically (hopefully not in delulu land). Anyway, over the four months of my summer in 2023, this README shall document the more important things I did - instead of the other things as in exploring CAMH, Toronto, and making some epic summer friends from the other summer students researching at the same time as me hehe. Hoping that this isn't confusing because man, oh man, did I have to yeet around all my files for this (it was so disorganized, idk how I found anything in my files), so I hope, wish and pray that you'll be able to find everything that you're ever looking for within my projects folder - in a reasonable context, that is.
 
-What did you do
-#SO basically my entire code is lowkey on SciNet's Jupyter Notebook, I'm a python gworlie. But I also used R for PLSC, getting loadings, etc. shall be explained later. This shall be as chronoligcal as the homosapiens timeline.
+Oh! And I also QC'd for the SPINS and SPASD database that was used here, along with Fariah Sandhu - and then also QC'd for OPTIMUM - but like I have no idea what's going on with that dataset, I just QC'd. It was the death of me, until I realized that my code was the death of me when it didn't choose to work - AND OMG CITRIX PLEASE THAT GODFORSAKEN PROGRAM YEETED MY LAPTOP INTO BLUE SCREEN TERRITORRY A HANDFUL OF TIMES- anyway
 
-#EXTRACTING TIMESERIES DATA
+# What did you do
+SO basically my entire code is lowkey on SciNet's Jupyter Notebook, I'm a python gworlie. But I also used R for PLSC, getting loadings, etc. shall be explained later. This shall be as chronoligcal as the homosapiens timeline.
 
-# Code can found in /scratch/zkhan/SPINS_Timeseries_Extraction/extract_timr_series_RS_2mm_GSR_glasser_tian_SPINS.sh
+# EXTRACTING TIMESERIES DATA
 
-# 1) Descending into thy folder listed above - this code when run in terminator, bash, control panel, etc. allows you to get the timeseries data from preprocessed data (bless Ju-Chi). There are comments that explain what each line means, but basically it pulls each subject's data from sub_dir and then either makes a folder if there isn't a folder made for that subject already and then computes the timeseries extraction through "ciftify_meants" (a function that Erin coded, very big brain). The directory that you put after "--outputcsv" is where the extracted timeseries csv files will be placed into. 
+Code can found in /scratch/zkhan/SPINS_Timeseries_Extraction/extract_timr_series_RS_2mm_GSR_glasser_tian_SPINS.sh
 
-# Mine is found at /scratch/zkhan/SPINS_Timeseries_Extraction/output. 
+1) Descending into thy folder listed above - this code when run in terminator, bash, control panel, etc. allows you to get the timeseries data from preprocessed data (bless Ju-Chi). There are comments that explain what each line means, but basically it pulls each subject's data from sub_dir and then either makes a folder if there isn't a folder made for that subject already and then computes the timeseries extraction through "ciftify_meants" (a function that Erin coded, very big brain). The directory that you put after "--outputcsv" is where the extracted timeseries csv files will be placed into. 
 
-#To run in terminal: "sbatch [name of entire path - mine would be /scratch/zkhan/SPINS_Timeseries_Extraction/extract_timr_series_RS_2mm_GSR_glasser_tian_SPINS.sh ] if not in the actual directory or just sbatch[name of the .sh file] if in the actual directory
+Mine is found at /scratch/zkhan/SPINS_Timeseries_Extraction/output. 
 
-#COPYING TO JUPYTER NOTEBOOK
+To run in terminal: "sbatch [name of entire path - mine would be /scratch/zkhan/SPINS_Timeseries_Extraction/extract_timr_series_RS_2mm_GSR_glasser_tian_SPINS.sh ] if not in the actual directory or just sbatch[name of the .sh file] if in the actual directory
 
-# 2) You'll know this command by the end of this, but you have to copy the entire folder to jupyter notebook in order to access it. All files that are used with the code in Jupyter Notebook are on Jupyter Notebook. But in order to do this, you need to make sure that the desktop that you are using is SSH'd with your SciNet account (ask Dawn or Kevin about this). If it is not, then the command below will not work.
+# COPYING TO JUPYTER NOTEBOOK
 
-# Code to be run in terminal: 
-# scp -r [the file path of the files you want to copy over] [scinetusername]@niagara.scinet.utoronto.ca:[file path of where you want the copied files to be stored into on Jupyter Notebook]
-# An example:
-# scp - r /scratch/zkhan/SPINS_Timeseries_Extraction/extract_timr_series_RS_2mm_GSR_glasser_tian_SPINS.sh zara1252@niagara.scinet.utoronto.ca:/scratch/project_1/data_extracted/NEW_DATA_SPINS/SPINS_Removed_Files/output
+2) You'll know this command by the end of this, but you have to copy the entire folder to jupyter notebook in order to access it. All files that are used with the code in Jupyter Notebook are on Jupyter Notebook. But in order to do this, you need to make sure that the desktop that you are using is SSH'd with your SciNet account (ask Dawn or Kevin about this). If it is not, then the command below will not work.
 
-#ONCE IN JUPYTER NOTEBOOK
+Code to be run in terminal: 
+scp -r [the file path of the files you want to copy over] [scinetusername]@niagara.scinet.utoronto.ca:[file path of where you want the copied files to be stored into on Jupyter Notebook]
+An example:
+scp - r /scratch/zkhan/SPINS_Timeseries_Extraction/extract_timr_series_RS_2mm_GSR_glasser_tian_SPINS.sh zara1252@niagara.scinet.utoronto.ca:/scratch/project_1/data_extracted/NEW_DATA_SPINS/SPINS_Removed_Files/output
 
-#Code can be found in: projects/zkhan/proj1/JupyterNotebook_Code/project_1/data_extracted/NEW_DATA_SPINS/Project_1_SPINS.ipynb
-#NOTE: Everytime you see a "In[ ]" within the python file, it is another executable cell within Jupyter Notebook. You need to run the cells chronologically from top to bottom so that all variables are executed and can be run within the other cells. 
+# ONCE IN JUPYTER NOTEBOOK
 
-# 3) I am running this within the environment [conda env:.conda-3.6_nilearn_01], but like I never used nilearn within the code. SO. Don't ask - okay fine, it was for BrainHacks School and I never switched it and here we are. I think you should still be able to run the code within the standard environment. 
+Code can be found in: projects/zkhan/proj1/JupyterNotebook_Code/project_1/data_extracted/NEW_DATA_SPINS/Project_1_SPINS.ipynb
+NOTE: Everytime you see a "In[ ]" within the python file, it is another executable cell within Jupyter Notebook. You need to run the cells chronologically from top to bottom so that all variables are executed and can be run within the other cells. 
 
-#Don't mind the red lines - they just show here in R, but is fine in Jupyter Notebook - and hopefully will help with understanding what code block I am talking about
+3) I am running this within the environment [conda env:.conda-3.6_nilearn_01], but like I never used nilearn within the code. SO. Don't ask - okay fine, it was for BrainHacks School and I never switched it and here we are. I think you should still be able to run the code within the standard environment. 
+
+Don't mind the red lines - they just show here in R, but is fine in Jupyter Notebook - and hopefully will help with understanding what code block I am talking about
 
 # The first cell block is 
 ```{r setup, include=FALSE}
@@ -54,7 +54,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-# which include all the libraries used within the code. This should just download the libraries and be ready to use as you go on. You would need to run this cell block everytime you restart the kernel.
+which include all the libraries used within the code. This should just download the libraries and be ready to use as you go on. You would need to run this cell block everytime you restart the kernel.
 
 
 # The second cell block is 
@@ -107,14 +107,14 @@ pd.options.display.max_rows = 999
 
 ```
 
-#The code block above was actually a python rendition of Teo's R code that can be found here: /projects/zkhan/proj1/R_code/SPINS_OLD_CODE/timeseries_variability.R
+The code block above was actually a python rendition of Teo's R code that can be found here: /projects/zkhan/proj1/R_code/SPINS_OLD_CODE/timeseries_variability.R
 
-#What this code block does is formulates the timeseries data that was extracted into the csv's from Step 1 and places them into a python dictionary called "resid_ts_named" where the key is the participant ID and the value is the timeseries data for each participant. Simply, "resid_ts_named" is a massive dictionary variable which stores all timeseries data for each participant (in this case 344) and names them. 
+What this code block does is formulates the timeseries data that was extracted into the csv's from Step 1 and places them into a python dictionary called "resid_ts_named" where the key is the participant ID and the value is the timeseries data for each participant. Simply, "resid_ts_named" is a massive dictionary variable which stores all timeseries data for each participant (in this case 344) and names them. 
 
-#if you want to change how the files are named - check out "ptlist"
+if you want to change how the files are named - check out "ptlist"
 
 
-#The third block of code is:
+# The third block of code is:
 ```{r setup, include=FALSE}
 '''TESTING MENU'''
 
@@ -202,7 +202,7 @@ print(df)
 #### Running neuroComBat to account for scanner effects - couldnt figure it out - i yeeted it into R and then put the csv back into here after calculating the mssd put path to where the neurocombat code is
 ```
 
-#the code above is kinda the main part of my entire summer project - my baby. Handle with care please. To kinda sum this up, once the cell block is run, a menu appears where you either enter "1" or "2" depending on how you want the timeseries data to be analyzed. From there, the timeseries data is then z-scored or mean-centered and then we get the mssd values after it runs through the mssd_value function. It spits out a dataframe with the participants lining the first column and then their respective mssd values for each of the 392 regions (or however much there is from the parcellated atlas that was used). I won't go into code detail here - because the code is commented - and chat gpt exists.
+the code above is kinda the main part of my entire summer project - my baby. Handle with care please. To kinda sum this up, once the cell block is run, a menu appears where you either enter "1" or "2" depending on how you want the timeseries data to be analyzed. From there, the timeseries data is then z-scored or mean-centered and then we get the mssd values after it runs through the mssd_value function. It spits out a dataframe with the participants lining the first column and then their respective mssd values for each of the 392 regions (or however much there is from the parcellated atlas that was used). I won't go into code detail here - because the code is commented - and chat gpt exists.
 
 # The fourth code block is
 ```{r setup, include=FALSE}
@@ -210,14 +210,14 @@ print(df)
 pd.DataFrame(mssd_matrix_mean).to_csv("old_mssd_matrix_mean.csv") #gets a csv file here
 ```
 
-#the above code block was to get a csv of the mssd values
+the above code block was to get a csv of the mssd values
 
-#BUT moving along - I didn't get the chance to code neuroCombat - a function used to mitigate any scanner errors - into this code here. So basically, I had to take the csv file of the mssd values from Jupyter Notebook and then put them into the code shown below in R (a snippet taken out of Julia's code :) ). This was done by, again, using the secure copy command through terminal, but now set-up the other way since I was copying from SciNet's Jupyter Notebook to the CAMH Desktops (example shown below): 
+BUT moving along - I didn't get the chance to code neuroCombat - a function used to mitigate any scanner errors - into this code here. So basically, I had to take the csv file of the mssd values from Jupyter Notebook and then put them into the code shown below in R (a snippet taken out of Julia's code :) ). This was done by, again, using the secure copy command through terminal, but now set-up the other way since I was copying from SciNet's Jupyter Notebook to the CAMH Desktops (example shown below): 
 
-# scp - r zara1252@niagara.scinet.utoronto.ca:/scratch/project_1/data_extracted/NEW_DATA_SPINS/mssd_csv_without_neurocombat/mssd_matrix_mean.csv /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/
+scp - r zara1252@niagara.scinet.utoronto.ca:/scratch/project_1/data_extracted/NEW_DATA_SPINS/mssd_csv_without_neurocombat/mssd_matrix_mean.csv /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/
 
-#the code for neuroCombat is shown below - the full version can also be accessed through /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/NEW_plsc.Rmd
-#NOTE: all variables that have a file path lead to the correct csv used
+the code for neuroCombat is shown below - the full version can also be accessed through /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/NEW_plsc.Rmd
+NOTE: all variables that have a file path lead to the correct csv used
   
 Load in data for analysis and run neurcoCombat 
 ```{r}
@@ -340,12 +340,12 @@ for (val_lab in val_pred) {
 }
 ```
 
-#at the very end I had taken the "brainmat" variable and made it into a csv to send back to Jupyter Notebook. 
-#the line of code for the "brainmat" variable to become a csv: write.csv(brainmat, file = "neuroCombat_mssd.csv", row.names = TRUE)
-#this csv was then "scp" over to Jupyter Notebook
+at the very end I had taken the "brainmat" variable and made it into a csv to send back to Jupyter Notebook. 
+the line of code for the "brainmat" variable to become a csv: write.csv(brainmat, file = "neuroCombat_mssd.csv", row.names = TRUE)
+this csv was then "scp" over to Jupyter Notebook
 
 
-#The fifth code block:
+# The fifth code block:
 ```{r setup, include=FALSE}
 '''SENDING MSSD VALUES (NOT THE FIRST 32) INTO TXT FILES FOR EACH PARTICIPANT'''
 
@@ -378,10 +378,10 @@ folder_name = '/project_1/data_extracted/NEW_DATA_SPINS/text_files'
 write_rows_to_text(csv_file, "/project_1/data_extracted/NEW_DATA_SPINS/resting_mean_centered_mssd_each_participant")
 ```
 
-#all this does is write .txt files of the mssd values from a certain csv file for each participant separately that you can update on the bottom of the cell block. No matter what it tells you, it will not dump the .txt files where the path is listed on the bottom. It will dump them in whatever directory the ipynb file is in. Trust me. Don't trust it. 
+all this does is write .txt files of the mssd values from a certain csv file for each participant separately that you can update on the bottom of the cell block. No matter what it tells you, it will not dump the .txt files where the path is listed on the bottom. It will dump them in whatever directory the ipynb file is in. Trust me. Don't trust it. 
 
 
-#The sixth block is:
+# The sixth block is:
 ```{r setup, include=FALSE}
 '''CREATING AND SEPARATING THE AVERAGE MSSD CSV's HERE - REARRANGING ROWS BASED ON THE CASE/CONTROL CSV - lowkey has to follow a format look at mssd_matrix_mean.csv'''
 # Read the first CSV file for the mssd values
@@ -435,12 +435,12 @@ avg_df_removed = avg_df.iloc[2:] #removes the first two averages
 avg_df_trans = avg_df_removed.transpose()
 ```
 
-#basically all this does is order a csv file based on controls vs cases or however the csv is ordered for "df2" and then gets the average value for both cases/controls for each region. You're left with a csv of 2 rows by 392 columns - in this case. 
+basically all this does is order a csv file based on controls vs cases or however the csv is ordered for "df2" and then gets the average value for both cases/controls for each region. You're left with a csv of 2 rows by 392 columns - in this case. 
 
-#The next couple of cell blocks are creating csv's and then creating .txt files for further analysis and plotting.
+The next couple of cell blocks are creating csv's and then creating .txt files for further analysis and plotting.
 
 
-#The ninth cell block is: 
+# The ninth cell block is: 
 ```{r setup, include=FALSE}
 '''CALCULATING THE T-TEST OF AVERAGE CASES VS CONTROLS - GIVES ONE OVERALL'''
 
@@ -467,9 +467,9 @@ print("T-Statistic:", t_stat)
 print("P-Value:", p_value)
 ```
 
-#this calculates the t_test on the average cases/controls - yay! first statistic done! Shall give you a number and a corresponding p-value. Make sure the inputted csv was the neuroCombatted version! 
+this calculates the t_test on the average cases/controls - yay! first statistic done! Shall give you a number and a corresponding p-value. Make sure the inputted csv was the neuroCombatted version! 
 
-#The tenth (we hit double digits O_O) cell block is:
+# The tenth (we hit double digits O_O) cell block is:
 ```{r setup, include=FALSE}
 '''For T-TEST, FDRCORRECTION AND LOG10 ON THE MSSD MATRIX CSV - GIVES 392 VALUES'''
 import pandas as pd
@@ -543,10 +543,10 @@ for index, p_value in log10_p_values:
 final_list = list[32:]
 ```
 
-#This basically now does a t-test on each region specfically between the cases and control group. To set the number of columns that a t-test should be done for, change the number for the "num_columns" variable, since the "for" loop runs for that many times. In the end, it gives you a list where it inserts the log_-10_p_values, where the indexed region would be - so it places a numerical value for a significant region, leaving the rest of the regions with a numerical value of 0. 
+This basically now does a t-test on each region specfically between the cases and control group. To set the number of columns that a t-test should be done for, change the number for the "num_columns" variable, since the "for" loop runs for that many times. In the end, it gives you a list where it inserts the log_-10_p_values, where the indexed region would be - so it places a numerical value for a significant region, leaving the rest of the regions with a numerical value of 0. 
 
 
-#The 11th block of code is:
+# The 11th block of code is:
 ```{r setup, include=FALSE}
 '''SENDING LOG10_P_VALUES(NOT THE FIRST 32) INTO TXT FILES FOR EACH PARTICIPANT'''
 
@@ -565,29 +565,29 @@ with open(file_path, 'w') as file:
         file.write(str(item) + '\n')
 ```
 
-#another .txt file creator. To be fair, I could've just kept one that couldve been used over and over again - but this kinda kept my thoughts in order for when I created csv files and in what order. But this just creates one .txt file where all the log_-10_p_values are stored in their respective region index.
+another .txt file creator. To be fair, I could've just kept one that couldve been used over and over again - but this kinda kept my thoughts in order for when I created csv files and in what order. But this just creates one .txt file where all the log_-10_p_values are stored in their respective region index.
 
-#The 12th block of code is just to check the motion data with a histogram - yolo. Not what's important in thy project tho. Hence why she is commented out.  
+The 12th block of code is just to check the motion data with a histogram - yolo. Not what's important in thy project tho. Hence why she is commented out.  
 
 
-#OKAY SO - IT'S PLSC TIME
+# OKAY SO - IT'S PLSC TIME
 
-# 4) So basically my PLSC code is found here: /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/NEW_plsc.Rmd
+4) So basically my PLSC code is found here: /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/NEW_plsc.Rmd
 
-#I had coded and used versions: R/4.1.0 and rstudio/1.4.1717
+I had coded and used versions: R/4.1.0 and rstudio/1.4.1717
 
-# This was taken from Julia's code and adapted wtih csv's needed for PLSC. Nothing was drastically changed and the lines of code have been commented 
+This was taken from Julia's code and adapted wtih csv's needed for PLSC. Nothing was drastically changed and the lines of code have been commented 
 
-#For this project, we had found Latent Variable 1 to be stable and significant to be included within the analysis. All code should work up until you reach "Important Brain Connection contributors for LV3 /n original connections valence weighted by contributions" . I only focused on LV1, so if you scroll down to "Important Brain Connection contributors for LV1 /n original connections valence weighted by contributions" - some lines of code work here as I transitioned from R to Jupyter Notebook again. 
+For this project, we had found Latent Variable 1 to be stable and significant to be included within the analysis. All code should work up until you reach "Important Brain Connection contributors for LV3 /n original connections valence weighted by contributions" . I only focused on LV1, so if you scroll down to "Important Brain Connection contributors for LV1 /n original connections valence weighted by contributions" - some lines of code work here as I transitioned from R to Jupyter Notebook again. 
 
-# 5) THE MAJOR SWITCHAROO
-# To find the top ten positive and negative loadings, I needed to send a csv of the variable "Cx_conn" to Jupyter Notebook. This csv can be found here:  /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/NEW_SPINS_output_file.csv
+5) THE MAJOR SWITCHAROO
+To find the top ten positive and negative loadings, I needed to send a csv of the variable "Cx_conn" to Jupyter Notebook. This csv can be found here:  /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/NEW_SPINS_output_file.csv
 
-#After sending this file onto Jupyter Notebook, I used the code called "fixing_file_for_brain_plot_in_r_backup.ipynb" found within this folder: /scratch/project_1/random_backup/NEW_SPINS_output_file.csv.
+After sending this file onto Jupyter Notebook, I used the code called "fixing_file_for_brain_plot_in_r_backup.ipynb" found within this folder: /scratch/project_1/random_backup/NEW_SPINS_output_file.csv.
 
-#Make sure that the Cx_conn csv is within the same directory as the python code. 
+Make sure that the Cx_conn csv is within the same directory as the python code. 
 
-#The code block below is basically what was used to amplify the values, you need a csv with ROIS, area, network all filled in and then an "r" column filled with 0's so that it can be replaced by the first column of the Cx_conn csv in the "file" variable below.
+The code block below is basically what was used to amplify the values, you need a csv with ROIS, area, network all filled in and then an "r" column filled with 0's so that it can be replaced by the first column of the Cx_conn csv in the "file" variable below.
 ```{r setup, include=FALSE}
 file = pd.read_csv('NEW_SPINS_output_file.csv')
 plsc_brain = pd.read_csv('NEW_rs_conn_LV1_correct_with_zeros.csv')
@@ -608,9 +608,9 @@ plsc_brain_drop = plsc_brain.drop(plsc_brain.columns[0], axis=1)
 #plsc_brain_drop2 = plsc_brain_drop.drop(plsc_brain_drop.columns[0], axis=1) #weird cause it doesnt consider the first unnamed column in the csv to be anything
 ```
 
-#this was then yeeted into a csv through: pd.DataFrame(plsc_brain_drop).to_csv("NEW_rs_conn_LV1.csv"). This csv was then brought back into R using the "scp" command in terminal.
+this was then yeeted into a csv through: pd.DataFrame(plsc_brain_drop).to_csv("NEW_rs_conn_LV1.csv"). This csv was then brought back into R using the "scp" command in terminal.
 
-#From there, a couple lines of code were used here:
+From there, a couple lines of code were used here:
 ```{r setup, include=FALSE}
 rs_conn_LV1 <- read.csv('/projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/NEW_rs_conn_LV1.csv') #changed from jupyter notebook
 lv1_pos_loadings = rs_conn_LV1[order(-rs_conn_LV1$r),] #put the csv back in after i add in the other column with it matched up the regions
@@ -623,16 +623,16 @@ lv1_neg_loadings = rs_conn_LV1[order(rs_conn_LV1$r),]
 top_10_neg_lv1 = lv1_neg_loadings[1:10,]
 ```
 
-#From here, the top 10 region values were taken and manually placed into a previously filled "0" value csv respectfully.
+From here, the top 10 region values were taken and manually placed into a previously filled "0" value csv respectfully.
 
 
-#6) NOW HERE COMES THE BRAIN PLOTS
-# so basically I adapted Julia's code for this in R. 
-# My code can be found at /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/testing_brain_plots. 
-# Minor things to note: you need to install "ggsegGlasser" by enabling the universe instead of the common command of install.packages("ggsegGlasser"), and you have to manually input the loading values into the functions. 
-#Another thing is that the region names are the letters/numbers in the middle of a region name
+# 6) NOW HERE COMES THE BRAIN PLOTS
+so basically I adapted Julia's code for this in R. 
+My code can be found at /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/testing_brain_plots. 
+Minor things to note: you need to install "ggsegGlasser" by enabling the universe instead of the common command of install.packages("ggsegGlasser"), and you have to manually input the loading values into the functions. 
+Another thing is that the region names are the letters/numbers in the middle of a region name
 
 # But that's about it! Thanks for reading :p
 
-#The Jupyter Notebook code can be found at: /projects/zkhan/proj1/JupyterNotebook_Code/project_1/data_extracted/NEW_DATA_SPINS/Project_1_SPINS.ipynb
+The Jupyter Notebook code can be found at: /projects/zkhan/proj1/JupyterNotebook_Code/project_1/data_extracted/NEW_DATA_SPINS/Project_1_SPINS.ipynb
 
