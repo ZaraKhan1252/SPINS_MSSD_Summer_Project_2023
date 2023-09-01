@@ -22,9 +22,8 @@ import matplotlib.pyplot as plt
 
 '''Reads the files'''
 #reads the files imported and sorts them numerically 
-files_EA_resid_ts =[] # lowkey dont know if this is needed, cause idk if glob automatically puts it into a file or something - has 2 participants taken out MRC_166 because
-                      # they didnt complete the study and then MRC_0007 because they were an outlier in the data
-files_EA_resid_ts = sorted(glob.glob("/scratch/a/arisvoin/zara1252/project_1/data_extracted/NEW_DATA_SPINS/SPINS_Removed_Files/output_exclusion_criteria/output/**/sub-*_RS_2mm_GSR_glasser_tian_meants.csv", recursive = True)) #for SPINS
+files_EA_resid_ts =[] # lowkey dont know if this is needed, cause idk if glob automatically puts it into a file or something
+files_EA_resid_ts = sorted(glob.glob("/scratch/a/arisvoin/<user>/project_1/data_extracted/NEW_DATA_SPINS/SPINS_Removed_Files/output_exclusion_criteria/output/**/sub-*_RS_2mm_GSR_glasser_tian_meants.csv", recursive = True)) #for SPINS
 
 #getting the data for the first columm here for region names
 data = pd.read_csv("G_atlas_info_reorder_correct.csv")
