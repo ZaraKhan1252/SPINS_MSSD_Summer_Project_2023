@@ -14,7 +14,7 @@ Hello future gamers and gamees, my name is Zara Khan and I was a summer student 
 Oh! And I also QC'd for the SPINS and SPASD database that was used here, along with Fariah Sandhu - and then also QC'd for OPTIMUM - but like I have no idea what's going on with that dataset, I just QC'd. It was the death of me, until I realized that my code was the death of me when it didn't choose to work - AND OMG CITRIX PLEASE THAT GODFORSAKEN PROGRAM YEETED MY LAPTOP INTO BLUE SCREEN TERRITORRY A HANDFUL OF TIMES- anyway
 
 # What did you do
-SO basically my entire code is lowkey on SciNet's Jupyter Notebook, I'm a python gworlie. But I also used R for PLSC, getting loadings, etc. shall be explained later. This shall be as chronoligcal as the homosapiens timeline.
+SO basically my entire code is lowkey on SciNet's Jupyter Notebook, I'm a python gworlie. But I also used R for PLSC, getting loadings, etc. shall be explained later. This shall be as chronological as the homosapiens timeline.
 
 # EXTRACTING TIMESERIES DATA
 
