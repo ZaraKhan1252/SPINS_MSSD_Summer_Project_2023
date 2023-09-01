@@ -33,7 +33,7 @@ To run in terminal: "sbatch [name of entire path - mine would be /scratch/zkhan/
 Code to be run in terminal: 
 scp -r [the file path of the files you want to copy over] [scinetusername]@niagara.scinet.utoronto.ca:[file path of where you want the copied files to be stored into on Jupyter Notebook]
 An example:
-scp - r /scratch/zkhan/SPINS_Timeseries_Extraction/extract_timr_series_RS_2mm_GSR_glasser_tian_SPINS.sh zara1252@niagara.scinet.utoronto.ca:/scratch/project_1/data_extracted/NEW_DATA_SPINS/SPINS_Removed_Files/output
+scp - r /scratch/zkhan/SPINS_Timeseries_Extraction/extract_timr_series_RS_2mm_GSR_glasser_tian_SPINS.sh <user>@niagara.scinet.utoronto.ca:/scratch/project_1/data_extracted/NEW_DATA_SPINS/SPINS_Removed_Files/output
 
 # ONCE IN JUPYTER NOTEBOOK
 
@@ -68,7 +68,7 @@ which include all the libraries used within the code. This should just download 
 #reads the files imported and sorts them numerically 
 files_EA_resid_ts =[] # lowkey dont know if this is needed, cause idk if glob automatically puts it into a file or something - has 2 participants taken out MRC_166 because
                       # they didnt complete the study and then MRC_0007 because they were an outlier in the data
-files_EA_resid_ts = sorted(glob.glob("/scratch/a/arisvoin/zara1252/project_1/data_extracted/NEW_DATA_SPINS/SPINS_Removed_Files/output_exclusion_criteria/output/**/sub-*_RS_2mm_GSR_glasser_tian_meants.csv", recursive = True)) #for SPINS
+files_EA_resid_ts = sorted(glob.glob("/scratch/a/arisvoin/<username>/project_1/data_extracted/NEW_DATA_SPINS/SPINS_Removed_Files/output_exclusion_criteria/output/**/sub-*_RS_2mm_GSR_glasser_tian_meants.csv", recursive = True)) #for SPINS
 
 #getting the data for the first columm here for region names
 data = pd.read_csv("G_atlas_info_reorder_correct.csv")
@@ -214,7 +214,7 @@ the above code block was to get a csv of the mssd values
 
 BUT moving along - I didn't get the chance to code neuroCombat - a function used to mitigate any scanner errors - into this code here. So basically, I had to take the csv file of the mssd values from Jupyter Notebook and then put them into the code shown below in R (a snippet taken out of Julia's code :) ). This was done by, again, using the secure copy command through terminal, but now set-up the other way since I was copying from SciNet's Jupyter Notebook to the CAMH Desktops (example shown below): 
 
-scp - r zara1252@niagara.scinet.utoronto.ca:/scratch/project_1/data_extracted/NEW_DATA_SPINS/mssd_csv_without_neurocombat/mssd_matrix_mean.csv /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/
+scp - r <username>@niagara.scinet.utoronto.ca:/scratch/project_1/data_extracted/NEW_DATA_SPINS/mssd_csv_without_neurocombat/mssd_matrix_mean.csv /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/
 
 the code for neuroCombat is shown below - the full version can also be accessed through /projects/zkhan/proj1/R_code/SPINS_NEW_R_CODE/NEW_plsc.Rmd
 NOTE: all variables that have a file path lead to the correct csv used
